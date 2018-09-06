@@ -1,4 +1,4 @@
-/** NetId: cl953. Time spent: 2 hour. 
+/** NetId: cl953 cy428. Time spent: 2 hour. 
     An instance maintains info about the PhD of a person. */
 //package a1;
 
