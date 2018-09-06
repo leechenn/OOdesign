@@ -10,13 +10,14 @@ public class PhD {
 	private PhD secondAdvisor; //null if unknown or if the person has less than two advisor
 	private int advisseNum; //number of PhD advisees of this person
 	
-	/**Constructor: an instance for a person with name n, PhD year y, and PhD month m. The advisors are unknown, and there are 0 advisees.
+	/**Constructor: an instance for a person with name name, PhD year year, and PhD month month. The advisors are unknown, and there are 0 advisees.
     Precondition: n has at least 2 chars, and m is in 1..12.*/
 	public PhD(String name, int year, int month) {
 		assert name.length()>=2&&month>=1&&month<=12;
 		this.name = name;
 		this.year = year;
 		this.month = month;
+		
 	}
 	
 	/**Constructor: a PhD with name n, PhD year y, PhD month m, first advisor adv1, and no second advisor.
@@ -108,6 +109,7 @@ public class PhD {
 		return (this!=p)&&((notNullAd1&&siblingC1)||(notNullAd2&&siblingC2));
 		
 	}
+	
 
 	
 }
