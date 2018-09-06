@@ -13,6 +13,23 @@ public class PhD {
 	
 	/**Constructor: an instance for a person with name name, PhD year year, and PhD month month. The advisors are unknown, and there are 0 advisees.
     Precondition: n has at least 2 chars, and m is in 1..12.*/
+	public static void main(String[] args) {
+		PhD p1 = new PhD("chen",1993,1);
+		System.out.println(p1.advisseNum);
+		PhD p2 = new PhD("che2",1993,1,p1);
+		System.out.println(p2.advisseNum);
+		System.out.println(p1.advisseNum);
+		PhD p3 = new PhD("che3",1993,1,p1);
+		System.out.println(p1.advisseNum);
+		PhD p4 =new PhD("che4",1992,1,p1,p2);
+		System.out.println(p1.advisseNum);
+		System.out.println(p2.advisseNum);
+		
+//		p3.addAdvisor1(p4);
+//		System.out.println(p3.firstAdvisor.name);
+		
+		
+	}
 	public PhD(String name, int year, int month) {
 		assert name.length()>=2&&month>=1&&month<=12;
 		this.name = name;
@@ -103,7 +120,7 @@ public class PhD {
 		assert p!=null;
 		boolean notNullAd1 = p.firstAdvisor!=null;
 		boolean siblingC1 = p.firstAdvisor==this.firstAdvisor||p.firstAdvisor==this.secondAdvisor;
-		boolean notNullAd2 = p.firstAdvisor!=null;
+		boolean notNullAd2 = p.secondAdvisor!=null;
 		boolean siblingC2 = p.secondAdvisor==this.firstAdvisor||p.secondAdvisor==this.secondAdvisor;
 		
 		

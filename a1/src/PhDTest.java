@@ -88,6 +88,8 @@ class PhDTest {
 		PhD phd6 = new PhD("chen5",1993,3,phd1,phd2);
 		assertEquals(false, phd1.isSiblingOf(phd1)); //A and B are the same object
 		assertEquals(false, phd1.isSiblingOf(phd2)); //Neither A nor B has an advisor
+		assertEquals(false,phd1.isSiblingOf(phd3)); //either A or B has no advisor
+		assertEquals(false,phd1.isSiblingOf(phd4)); 
 		assertEquals(true, phd3.isSiblingOf(phd4)); //A.advisor1 is not null and equals B.advisor1
 		assertEquals(true, phd3.isSiblingOf(phd5)); //A.advisor1 is not null and equals B.advisor2
 		assertEquals(true, phd4.isSiblingOf(phd5)); //A.advisor2 is not null and equals B.advisor1
