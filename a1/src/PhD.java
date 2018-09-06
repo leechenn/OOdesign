@@ -12,7 +12,7 @@ public class PhD {
 	/**Constructor: an instance for a person with name n, PhD year y, and PhD month m. The advisors are unknown, and there are 0 advisees.
     Precondition: n has at least 2 chars, and m is in 1..12.*/
 	public PhD(String name, int year, int month) {
-		assert(name.length()>=2&&month>=1&&month<=12);
+		assert name.length()>=2&&month>=1&&month<=12;
 		this.name = name;
 		this.year = year;
 		this.month = month;
@@ -20,7 +20,7 @@ public class PhD {
 	/**Constructor: a PhD with name n, PhD year y, PhD month m, first advisor adv1, and no second advisor.
 	Precondition: n has at least 2 chars, m is in 1..12, and adv1 is not null.*/
 	public PhD(String name, int year, int month,PhD adv1) {
-		assert(name.length()>=2&&month>=1&&month<=12&&adv1!=null);
+		assert name.length()>=2&&month>=1&&month<=12&&adv1!=null;
 		this.name = name;
 		this.year = year;
 		this.month = month;
@@ -31,7 +31,7 @@ public class PhD {
     Precondition: n has at least 2 chars, m is in 1..12,
     adv1 and adv2 are not null, and adv1 and adv2 are different.*/
 	public PhD(String name, int year, int month,PhD adv1,PhD adv2) {
-		assert(name.length()>=2&&month>=1&&month<=12&&adv1!=null&&adv2!=null&&adv1!=adv2);
+		assert name.length()>=2&&month>=1&&month<=12&&adv1!=null&&adv2!=null&&adv1!=adv2;
 		this.name = name;
 		this.year = year;
 		this.month = month;
@@ -67,14 +67,14 @@ public class PhD {
 	/**Add p as the first advisor of this person.
      Precondition: the first advisor is unknown and p is not null.*/
 	public void addAdvisor1(PhD p) {
-		assert(this.firstAdvisor==null&&p!=null);
+		assert this.firstAdvisor==null&&p!=null;
 		this.firstAdvisor=p;
 		p.advisseNum = p.advisseNum+1;
 	}
 	/**Add p as the second advisor of this PhD.
 	Precondition: The first advisor is known, the second advisor is unknown, p is not null, and p is different from the first advisor.*/
 	public void addAdvisor2(PhD p) {
-		assert(this.firstAdvisor!=null&&this.secondAdvisor==null&&p!=null&&p!=this.firstAdvisor);
+		assert this.firstAdvisor!=null&&this.secondAdvisor==null&&p!=null&&p!=this.firstAdvisor;
 		this.secondAdvisor=p;
 		p.advisseNum = p.advisseNum+1;
 	}
@@ -85,7 +85,7 @@ public class PhD {
 	}
 	/**Return value of: this PhD is an intellectual sibling of p. Precondition: p is not null.*/
 	public boolean isSiblingOf(PhD p){
-		assert(p!=null);
+		assert p!=null;
 		boolean notNullAd1 = p.firstAdvisor!=null;
 		boolean siblingC1 = p.firstAdvisor==this.firstAdvisor||p.firstAdvisor==this.secondAdvisor;
 		boolean notNullAd2 = p.firstAdvisor!=null;
