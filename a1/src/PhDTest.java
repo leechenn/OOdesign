@@ -102,11 +102,14 @@ class PhDTest {
 		PhD phd3 = new PhD("chen2",1993,3,phd1);
 		PhD phd4 = new PhD("chen3",1993,3,phd1,phd2);
 		assertThrows(AssertionError.class,()->{new PhD("c",1993,1);});
-		assertThrows(AssertionError.class,()->{new PhD("ch",1993,0);});
+		assertThrows(AssertionError.class,()->{new PhD("ch",1993,0);});	
+	    assertThrows(AssertionError.class,()->{new PhD("ch",1993,13);}); 
 		assertThrows(AssertionError.class,()->{new PhD("ch",1993,1,null);});
 		assertThrows(AssertionError.class,()->{new PhD("ch",1993,0,phd1);});
+		assertThrows(AssertionError.class,()->{new PhD("ch",1993,13,phd1);});
 		assertThrows(AssertionError.class,()->{new PhD("c",1993,1,phd1);});
 		assertThrows(AssertionError.class,()->{new PhD("ch",1993,0,phd1,phd2);});
+		assertThrows(AssertionError.class,()->{new PhD("ch",1993,13,phd1,phd2);});
 		assertThrows(AssertionError.class,()->{new PhD("ch",1993,1,phd1,phd1);});
 		assertThrows(AssertionError.class,()->{new PhD("c",1993,1,phd1,phd2);});
 		assertThrows(AssertionError.class,()->{new PhD("ch",1993,1,null,phd2);});

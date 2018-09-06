@@ -1,3 +1,4 @@
+//checked the Javadoc output and it was OK.
 /** NetId: cl953, cy428. Time spent: 2 hour. 
     An instance maintains info about the PhD of a person. */
 
